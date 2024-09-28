@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
           submodules: true
@@ -50,4 +50,4 @@ jobs:
         env:
           S3_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY_ID }}
           S3_SECRET_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        run: s3cmd --acl-public put traccar-*.zip s3://${{ secrets.AWS_S3_BUCKET }}/builds/ --host=af-south-1.amazonaws.com --host-bucket=${{ secrets.AWS_S3_BUCKET }} --access_key="$S3_ACCESS_KEY" --secret_key="$S3_SECRET_KEY"
+        run: s3cmd --acl-public put enroute-*.zip s3://${{ secrets.AWS_S3_BUCKET }}/builds/ --host=af-south-1.amazonaws.com --host-bucket=${{ secrets.AWS_S3_BUCKET }} --access_key="$S3_ACCESS_KEY" --secret_key="$S3_SECRET_KEY"
