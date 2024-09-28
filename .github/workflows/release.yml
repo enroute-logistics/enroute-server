@@ -4,13 +4,12 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'Version'
+        description: "Version"
         required: true
-        default: 'preview'
+        default: "preview"
 
 jobs:
   build:
-
     runs-on: ubuntu-22.04
 
     steps:
@@ -19,7 +18,7 @@ jobs:
           fetch-depth: 0
           submodules: true
       - run: git checkout ${{ github.ref_name }}
-        working-directory: ./traccar-web
+        working-directory: ./enroute-web
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
@@ -30,9 +29,9 @@ jobs:
         with:
           node-version: 21
           cache: npm
-          cache-dependency-path: traccar-web/package-lock.json
+          cache-dependency-path: enroute-web/package-lock.json
       - run: npm ci && npm run build
-        working-directory: ./traccar-web
+        working-directory: ./enroute-web
       - run: |
           sudo dpkg --add-architecture i386
           sudo apt-get update

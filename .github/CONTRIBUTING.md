@@ -14,7 +14,6 @@ GitHub issues should be used ONLY for feature requests, code discussions and bug
 There are multiple Traccar projects. If you create a new issue you MUST do it in the relevant repository:
 
 - [Traccar Server](https://github.com/tananaev/traccar/issues)
-- [Traccar Web Interface](https://github.com/tananaev/traccar-web/issues)
 - [Traccar Client for Android](https://github.com/tananaev/traccar-client-android/issues)
 - [Traccar Client for iOS](https://github.com/tananaev/traccar-client-ios/issues)
 - [Traccar Manager for Android](https://github.com/tananaev/traccar-manager-android/issues)
