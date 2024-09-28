@@ -1,5 +1,4 @@
 [submodule "enroute-web"]
 	path = enroute-web
-	url = ../enroute-web.git
+	url = https://github.com/enroute/enroute-web.git
 	branch = master
-	ignore = all
