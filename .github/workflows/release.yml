@@ -48,6 +48,6 @@ jobs:
       - name: Upload installers
         working-directory: ./setup
         env:
-          S3_ACCESS_KEY: ${{ secrets.S3_ACCESS_KEY }}
-          S3_SECRET_KEY: ${{ secrets.S3_SECRET_KEY }}
-        run: s3cmd --acl-public put traccar-*.zip s3://traccar/builds/ --host=nyc3.digitaloceanspaces.com --host-bucket=traccar --access_key="$S3_ACCESS_KEY" --secret_key="$S3_SECRET_KEY"
+          S3_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          S3_SECRET_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        run: s3cmd --acl-public put traccar-*.zip s3://${{ secrets.AWS_S3_BUCKET }}/builds/ --host=af-south-1.amazonaws.com --host-bucket=${{ secrets.AWS_S3_BUCKET }} --access_key="$S3_ACCESS_KEY" --secret_key="$S3_SECRET_KEY"
