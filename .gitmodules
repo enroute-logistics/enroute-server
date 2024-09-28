@@ -1,5 +1,5 @@
-[submodule "traccar-web"]
-	path = traccar-web
-	url = ../traccar-web.git
+[submodule "enroute-web"]
+	path = enroute-web
+	url = ../enroute-web.git
 	branch = master
 	ignore = all
