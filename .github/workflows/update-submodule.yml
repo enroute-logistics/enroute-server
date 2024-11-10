@@ -1,0 +1,23 @@
+name: Update Frontend Submodule
+
+on:
+  repository_dispatch:
+    types: [frontend-updated]
+
+jobs:
+  update_submodule:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout backend repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          submodules: true
+      - name: Update frontend submodule
+        run: |
+          git submodule update --remote
+          git config user.name "GitHub Action"
+          git config user.email "action@github.com"
+          git add enroute-web
+          git commit -m "Update frontend submodule to latest commit"
+          git push origin master

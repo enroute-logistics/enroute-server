@@ -3,6 +3,7 @@ docker run \
     --hostname traccar \
     --detach --restart unless-stopped \
     --publish 80:8082 \
+    --publish 3306:3306 \
     --publish 5000-5150:5000-5150 \
     --publish 5000-5150:5000-5150/udp \
     --volume ~/opt/traccar/logs:/opt/traccar/logs:rw \
