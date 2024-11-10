@@ -47,7 +47,7 @@ jobs:
           wget -q https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.4+7/OpenJDK21U-jdk_x64_windows_hotspot_21.0.4_7.zip
           wget -q https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.4+7/OpenJDK21U-jdk_x64_linux_hotspot_21.0.4_7.tar.gz
           wget -q https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.4+7/OpenJDK21U-jdk_aarch64_linux_hotspot_21.0.4_7.tar.gz
-          ./package.sh ${{ if(${{ github.event.inputs.version }}) }} ${{ github.event.inputs.version }} ${{ else }} other ${{ endif }}
+          ./package.sh ${{ github.event.inputs.version || 'other' }}
       - name: Upload installers
         working-directory: ./setup
         env:
